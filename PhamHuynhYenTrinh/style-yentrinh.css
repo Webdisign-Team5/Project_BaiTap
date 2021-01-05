@@ -1,0 +1,174 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.6em;
+}
+header{
+    width: 100%;
+    background-color: cadetblue;
+    color: whitesmoke;
+    height: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 5.5em;
+}
+
+.navigation{
+    padding: 5px;
+    overflow: hidden;
+    float: none;
+    background-color: white;
+    font-size: 1.5em;
+}
+
+.navigation a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 17px;
+    color: black;
+    float: left;
+}
+.navigation a:hover{
+    background-color: lawngreen;
+    color: white;
+    border-radius: 15px;
+}
+.navigation #home{
+    background-color: deepskyblue;
+    border-radius: 15px;
+}
+.navigation a:last-child{
+    display: none;
+}
+main{color: dimgrey;
+width: 100%;
+padding: 2px;
+overflow: hidden;}
+main #left, #right{
+    font-size: 2.5em;
+    text-align: center;
+    color: white;}
+
+#left{
+    float: left;
+    background-color: turquoise;
+    width: 19.5%;
+    margin-right: 0.5%;
+    height: 1000px;
+}
+
+#right{
+    float:right;
+    background-color: turquoise;
+    width: 19.5%;
+    height: 1000px;
+}
+#container{
+    width: 60%;
+    float: left;
+    background-color: rgb(140, 217, 240);
+    color: rgb(5, 7, 110);
+}
+#container h3{
+    text-decoration: underline solid  rgb(5, 7, 110);
+    font-weight: bold;
+}
+#container .red{
+    color: red;
+}
+#container #home{
+    width: 97%;
+    margin: 0 auto;
+    font-size: 2.0em;
+}
+#table01 table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.2em;
+}
+#table01 th,tr,td{
+    color:whitesmoke;
+    border: 2px solid rgb(74, 8, 119);
+    padding: 2px;
+    text-transform: bold;
+    text-align: center;
+}
+#table01 tr:nth-child(even){
+    background-color: whitesmoke;
+}
+ .about td{
+    font-size: 0.8em;
+    color: blue;
+    text-align: left;
+}
+#toobar{
+    width: 100%;
+    position: fixed;
+    bottom: 1px solid deepskyblue;
+}
+#toobar #table02{
+    width: 70%;
+    margin:0 auto;
+    height: 100px;
+    padding-bottom: 5px;
+    background-color: rgba(13, 66, 82, 0.61);
+}
+
+#table02 #cell1{
+    width: 15%;
+    background-color: rgba(96, 216, 224, 0.801);}
+#table02 #cell2{ width: 15%;
+    background-color: rgba(55, 90, 248, 0.801);}
+#table02 #cell3{ width: 40%;
+    background-color: rgba(255, 34, 27, 0.801);}
+#table02 #cell4{ width: 15%;
+    background-color: rgba(220, 235, 12, 0.801);}
+#table02 #cell5{ width: 15%;
+    background-color: rgba(39, 230, 96, 0.801);}
+footer{
+width: 100%;
+background-color: skyblue;
+height: 50px;
+}
+@media screen and (max-width:800px){
+    #left, #container{
+        float: left;
+        margin-right: 0.5%;
+        margin-left: 0;
+    }
+    #right{
+        display: none;
+    }
+    #left{
+        width: 30%;
+    }
+    #container{width: 69%;}
+    .navigation a:not(:last-child){
+        display: none;
+    }
+    .navigation a.icon{
+        
+        display: inline;
+        float: right;}
+    .navigation.rps{
+        position: relative;
+    }
+    .navigation.rps a.icon{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .navigation.rps a{
+        float: none;
+        text-align: left;
+        display: block;
+        
+    }
+    #toolbar{
+        display: none;
+    }
+}
