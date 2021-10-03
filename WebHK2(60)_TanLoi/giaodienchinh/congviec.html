@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Người dùng</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.css" integrity="sha512-+BYMzqWPGdpv0FljRUI2S5tTMqJyE9tgnbY8DqMseCIs6EbwSehRnLmuoAZSfYFxzcjhpagE+ubwBLaBIH/OHg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/congviec.css">
+</head>
+
+<style>
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 10px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: rgb(116, 110, 110);
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    
+    #myBtn:hover {
+      background-color: #555;
+    }
+</style>
+<body>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><span>&#9757;</span></button>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <br>
+            <div class="sidebar-header">
+                <h3 style="text-align: center;">Quản Lý Nông Trại</h3><br>
+                <h4 style="padding-left: 10px;">Chức năng</h4>
+                <hr style="background-color:white;font-size:1.2em; ">
+            <ul class="list-unstyled">
+                <li><a class="nguoidung" style="cursor: pointer;"><i class="fas fa-user"></i> Quản lý người dùng</a></li>
+                <li><a class="muavu" style="cursor: pointer;"><i class="fas fa-tasks"></i> Quản lý mùa vụ</a></li>
+                <li><a class="congviec" style="background-color:white;color:#a79b94;cursor: pointer;"><i class="fas fa-tree"></i> Quản lý công việc</a></li>
+                <li><a class="thietbi" style="cursor: pointer;"><i class="fas fa-laptop-house"></i> Quản lý thiết bị</a></li>
+            </ul>
+        </nav>
+
+        <!-- Content -->
+        <div id="content">
+
+            <header class="row">
+                <div class="col toggler-btn">
+                    <button class="btn d-md-none bg-main" id="sidebarCollapse"><i class="fas fa-align-left"></i></button>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <ul class="nav">
+                        <li class="nav-item"><a id="trangDN" class="nav-link" style="cursor: pointer;color: white;"><i class="fas fa-exchange-alt"></i> Change Account</a></li>
+                        <li class="nav-item"><a id="logout" class="nav-link" style="cursor: pointer;color: white;"><i class="fas fa-sign-out-alt"></i>LogOut</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            
+            <div class="mainer">
+                <br>
+                <h3 style="margin: 0 auto; text-align: center; background-color:#689eb8 ;width: 35%; padding: 15px;border-radius: 3px;color: white;">Danh sách công việc</h3><br>
+                <br>
+                <button id="button-HD">Thêm công việc</button>
+                <br><br>
+                 <table id="hoadon">  
+                        <tr>
+                            <th class=" cot" style="width: 5%;">STT</th>
+                            <th class=" cot" style="width: 10%;">Tên công việc</th>
+                            <th class=" cot" style="width: 10%;">Thuộc mùa vụ</th>
+                            <th class=" cot" style="width: 10%;">Ngày bắt đầu</th>
+                            <th class=" cot" style="width: 10%;">Ngày kết thúc(dự kiến)</th>
+                            <th class=" cot" style="width: 10%;">thời gian Dự kiến</th>
+                            <th class=" cot" style="width: 10%;">Trạng thái</th>
+                            <th class=" cot" style="width: 15%;">Mô tả</th>
+                            <th class=" cot" style="width: 10%;">Người thực hiện</th>
+                            <th class=" cot" style="width: 10%;">Chức năng</th>
+                         
+                        </tr>
+                 </table>
+                 <div id="addHD">
+
+                    <div id="nhaplieu">
+                        <div class="hop">
+                            <p style="text-align: right;width: 55%; font-weight:bold ;color: azure;font-size: 1.2em;padding-top: 5px">Nhập dữ liệu</p>
+                            <span class="close">&times;</span>
+                        </div>
+                        <!--Đơn sẽ in ra như này nè-->
+
+                        <form action="" id="formCT">
+                            <input style="display: none;" type="text" id="editId" placeholder="Nhập..."><br>
+                            <label for="tencv">Tên công việc</label><br>
+                            <input type="text" id="tencv" name="tencv" class="btnkhungad" placeholder="Nhập..."><br>
+                            <label for="thuocmuavu">Thuộc mùa vụ</label><br>
+                            <input type="text" id="thuocmuavu" name="thuocmuavu" class="btnkhungad" placeholder="Nhập...">
+                            <label for="batdau">Ngày bắt đầu</label><br>
+                            <input type="date" id="batdau" name="batdau" class="btnkhungad" placeholder="Nhập...">
+                            <label for="ketthuc">Ngày kết thúc</label>
+                            <input type="date" id="ketthuc" name="ketthuc" class="btnkhungad"
+                                placeholder="Nhập...">
+                            <label for="tgdukien">Thời gian dự kiến</label>
+                            <input type="text" id="tgdukien" name="tgdukien" class="btnkhungad"
+                                placeholder="Nhập...">
+                            <label for="trangthai">Trạng thái</label>
+                            <select id="trangthai" class="btnkhungad">
+                                <option value="Chưa bắt đầu" selected>Chưa bắt đầu</option>
+                                <option value="Đang trong mùa vụ">Đang trong mùa vụ</option>
+                                <option value="Đã kết thúc">Đã kết thúc</option>
+                            </select>
+                            <label for="mota">Mô tả</label><br>
+                            <input type="text" id="mota" name="mota" class="btnkhungad"
+                                placeholder="Nhập...">
+                                <label for="nguoithuchien">Người thực hiện</label><br>
+                            <input type="text" id="nguoithuchien" name="nguoithuchien" class="btnkhungad"
+                                placeholder="Nhập...">
+                        </form>
+                        
+
+                        <button id="HD_submit">thêm</button>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        }
+    </script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Font Awesome JS -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+    <script src="js/congviec.js"></script>
+
+</body>
+
+
+</html>

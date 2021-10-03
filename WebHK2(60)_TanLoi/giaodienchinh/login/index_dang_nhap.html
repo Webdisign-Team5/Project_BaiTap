@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_dang_nhap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Dang nhap</title>
+</head>
+<body>
+    <div id="container">
+        <div id="box">
+            <h1>Đăng Nhập</h1>
+            <i style="font-size: 0.8em;">Chú ý: Tên đăng nhập và mật khẩu là username và mật khẩu bên danh sách người dùng ^^</i>
+            <div class="dangnhap">
+                <input type="text" name="name" id="name" placeholder="Tên đăng nhập" value="" title="Chú ý tên đăng nhập luôn từ 4 ký tự trở lên">
+                <!-- <div id="error" style="display: none;"><p style="color: red; font-size: 0.8em;"><i class="fa fa-warning"></i> Nhập Tên Đăng nhập đi bro, nếu ko có thì đi đăng ký đi!</p></div><br><br> -->
+                <input type="password" name="pass" id="pass" placeholder="*********" value="" title="Chú ý mật khẩu luôn từ 8 ký tự trở lên">
+                <div id="error1" style="display: none;"><p style="color: red; font-size: 0.8em;"><i class="fa fa-warning"></i>Vui lòng nhập thông tin</p></div>
+                <div id="notthing" style="display: none;"><p style="color: red; font-size: 0.8em;"><i class="fa fa-warning"></i>Tài khoản hoặc mật khẩu không đúng. Vui lòng thử lại</p></div>
+                <br>
+                <div id="fogot"><a id="forgot" style="cursor: pointer;"><i class="fas fa-hand-point-right" style="color: white;"></i>Forgot Password or Account?</a></div>
+                <br><br>
+                <div style="width: 100%; text-align: center;">
+                    <input type="submit" name="submit" id="submit" value="Đăng Nhập" style="cursor: pointer;">
+                    <br><br>
+                    <a id="dangky" style="font-size: 1em;cursor: pointer;"><i class="fas fa-hand-point-right" style="color: white;"></i> Đăng ký <i class="fas fa-hand-point-left" style="color: white;"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="../js/dang_nhap.js"></script> -->
+    <!-- <script src="../js/jquery-3.6.0.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script src="js/dang_nhap_jquery.js"></script>
+</body>
+
+</html>

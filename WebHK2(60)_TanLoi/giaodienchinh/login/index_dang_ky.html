@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_dang_ky.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Dang ky</title>
+</head>
+<body>
+    <div id="container">
+        <div id="box">
+            <h1 style="font-size: 2.5em;">Đăng Ký</h1>
+            <div class="dangnhap">
+                
+                <input type="text" name="name" id="name" placeholder="Nhập tên đăng nhập" value="" title="Tên đăng nhập phải dài hơn 4 ký tự"  onclick="myFunction()">
+                <div id="loi1" style="display: none; color: red; font-size: 0.8em;"><i class="fa fa-warning"></i> Yêu cầu nhập trên 4 Ký tự!</div>
+                <br><br>
+                <input type="password" name="pass" id="pass" placeholder="Nhập mật khẩu" value="" title="Mật khẩu phải dài hơn 8 ký tự"  onclick="myFunction2()">
+               
+                <div id="loi2" style="display: none; color: red; font-size: 0.8em;"><i class="fa fa-warning"></i> Yêu cầu nhập trên 8 ký tự!</div>
+                <br><br>
+                
+                <input type="password" name="pass2" id="pass2" placeholder="Nhập lại mật khẩu" value="" title="Mật khẩu phải dài hơn 8 ký tự và trùng với mật khẩu trên" onclick="myFunction3()">
+                <div id="error2" style="display: none; color: red; font-size: 0.8em;"><i class="fa fa-warning"></i> Không được để trống!</div>
+                <div id="error3" style="display: none; color: red; font-size: 0.8em;"><i class="fa fa-warning"></i> Phải trùng với mật khẩu ở trên!</div>
+                <div id="loi3" style="display: none; color: red; font-size: 0.8em;"><i class="fa fa-warning"></i> Yêu cầu nhập trên 8 ký tự!</div>
+                <br>
+                <div id="error" style="display: none; color: red; font-size: 0.8em;"><i class="fa fa-warning"></i> Không được để trống!</div>
+                <div id="fogot"><a href="#" id="help">Trợ giúp?</a></div>
+                <br> <br>
+                <div style="width: 100%; text-align: center;">
+                <input type="submit" name="submit" id="submit" value="Đăng Ký" style="cursor: pointer;">
+                <br><br>
+                <a id="dangnhap" style="font-size: 1em;cursor: pointer">Đăng Nhập</a>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+   <!-- <script src="../js/dang_ky.js"></script>-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
+   <script src="js/dangky_jquery.js"></script>
+</body>
+
+</html>

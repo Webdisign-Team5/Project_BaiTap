@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Người dùng</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.css"
+        integrity="sha512-+BYMzqWPGdpv0FljRUI2S5tTMqJyE9tgnbY8DqMseCIs6EbwSehRnLmuoAZSfYFxzcjhpagE+ubwBLaBIH/OHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/thietbi.css">
+</head>
+<style>
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgb(116, 110, 110);
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+</style>
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><span>&#9757;</span></button>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <br>
+            <div class="sidebar-header">
+                <h3 style="text-align: center;">Quản Lý Nông Trại</h3><br>
+                <h4 style="padding-left: 10px;">Chức năng</h4>
+                <hr style="background-color:white;font-size:1.2em; ">
+                <ul class="list-unstyled">
+                    <li><a class="nguoidung" style="cursor: pointer;"><i class="fas fa-user"></i> Quản lý người dùng</a></li>
+                <li><a class="muavu" style="cursor: pointer;"><i class="fas fa-tasks"></i> Quản lý mùa vụ</a></li>
+                <li><a class="congviec" style="cursor: pointer;"><i class="fas fa-tree"></i> Quản lý công việc</a></li>
+                <li><a class="thietbi"  style="background-color:white;color:#a79b94;cursor: pointer;"><i class="fas fa-laptop-house"></i> Quản lý thiết bị</a></li>
+                </ul>
+        </nav>
+
+        <!-- Content -->
+        <div id="content">
+
+            <header class="row">
+                <div class="col toggler-btn">
+                    <button class="btn d-md-none bg-main" id="sidebarCollapse"><i
+                            class="fas fa-align-left"></i></button>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <ul class="nav">
+
+                        <li class="nav-item"><a id="trangDN" class="nav-link" style="cursor: pointer;color: white;"><i class="fas fa-exchange-alt"></i> Change Account</a></li>
+                        <li class="nav-item"><a id="logout" class="nav-link" style="cursor: pointer;color: white;"><i class="fas fa-sign-out-alt"></i>LogOut</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <div class="mainer">
+                <br>
+                <h3
+                    style="margin: 0 auto; text-align: center; background-color:#689eb8 ;width: 35%; padding: 15px;border-radius: 3px;color: white;">
+                    Danh sách các thiết bị</h3><br>
+                  
+                <br>
+                <div class="container-fluid" style="margin-left: 50px;">
+                    <div class="row">
+                        <div class="col-3.8 cot bg-primary" id="dele1"><br>
+                            <h3>&bull; Máy Cày</h3>
+                            
+                            <div class="boxed">                       
+                                <table id="hoadon">
+                                    <tr>
+                                        Trạng thái:&nbsp;
+                                    </tr>
+                                </table>
+                                <div id="addHD">
+                                    <span id="close">&times;</span>
+                                    
+                                    <form  action="">
+                                        <input style="display: none;" type="text" id="editId" placeholder="Nhập..."><br>
+                                               <select  id="trangthaimc">
+                                            <option value="Đang hoạt động"> Đang hoạt động</option>
+                                            <option value="Đã hư hỏng">Đã hư hỏng</option>
+                                        </select>
+                                    
+                                    </form>
+                                    <button id="HD_submit">Edit</button>
+                                </div>
+                                
+                            </div>
+                            <div class="history">
+                                <div class="boxed">
+                                    <p>Hoạt động gần đây: </p>
+                                <div>
+                                    <p>&nbsp;&bull; 25/06/2021</p>
+                                    <p>&nbsp;&bull; 13/06/2021</p>
+                                    <p>&nbsp;&bull; 25/05/2021</p>
+                                  
+                                </div>
+                                </div>
+                               
+                            </div>
+                            
+                             <button class="delete" id="de1">Delete</button><br><br>
+                          
+                        </div>
+                        <div class="col-3.5 cot bg-primary" id="dele2"><br>
+                            <h3>&bull; Máy Phun Thuốc</h3>
+                            
+                            <div class="boxed">  
+                                                   
+                                <table id="hoadon2">
+                                    <tr>
+                                        Trạng thái:&nbsp;
+                                    </tr>
+                                </table>
+                                <div id="addHD2">
+                                    <span id="close2">&times;</span>
+                                    
+                                    <form  action="">
+                                        <input style="display: none;" type="text" id="editId2" placeholder="Nhập..."><br>
+                                        <select  id="trangthai">
+                                            <option value="Đang hoạt động"> Đang hoạt động</option>
+                                            <option value="Đã hư hỏng">Đã hư hỏng</option>
+                                        </select>
+                                    
+                                    </form>
+                                    <button id="HD_submit2">Edit</button>
+                                </div>
+                                
+                            </div>
+                            <div >
+                                <div class="boxed">
+                                    <p>Hoạt động gần đây: </p>
+                                <div>
+                                    <p>&nbsp;&bull; 15/06/2021</p>
+                                    <p>&nbsp;&bull; 15/05/2021</p>
+                                    <p>&nbsp;&bull; 20/04/2021</p>
+                                  
+                                </div>
+                                </div>
+                               
+                            </div>
+                            <button class="delete" id="de2">Delete</button><br><br>
+                        </div>
+                        <div class="col-3.5 cot bg-primary" id="dele3"><br>
+                            <h3>&bull; Máy Cắt Cỏ</h3>
+                            <!-- <button id="button-HD3">them</button> -->
+                            <div class="boxed">                       
+                                <table id="hoadon3">
+                                    <tr>
+                                        Trạng thái:&nbsp;
+                                    </tr>
+                                </table>
+                                <div id="addHD3">
+                                    <span id="close3">&times;</span>
+                                    
+                                    <form  action="">
+                                        <input style="display: none;" type="text" id="editId3" placeholder="Nhập..."><br>
+                                        <select  id="trangthaicc">
+                                            <option value="Đang hoạt động"> Đang hoạt động</option>
+                                            <option value="Đã hư hỏng">Đã hư hỏng</option>
+                                        </select>
+                                    
+                                    </form>
+                                    <button id="HD_submit3">Edit</button>
+                                </div>
+                                
+                            </div>
+                            <div >
+                                <div class="boxed">
+                                    <p>Hoạt động gần đây: </p>
+                                <div>
+                                    <p>&nbsp;&bull; 01/07/2021</p>
+                                    <p>&nbsp;&bull; 15/06/2021</p>
+                                    <p>&nbsp;&bull; 02/06/2021</p>
+                                  
+                                </div>
+                                </div>
+                               
+                            </div>
+                            <button class="delete" id="de3">Delete</button><br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>   
+    
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        }
+    </script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+        <script src="js/thietbi.js"></script>
+        <script src="js/mayphunthuoc.js"></script>
+        <Script src="js/maycatco.js"></Script>
+</body>
+
+
+</html>
